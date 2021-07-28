@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 import DetailsPageHeader from "../pages/DetailsPageHeader"
+import DailyFavoritesButton from "../components/DailyFavoritesButton"
+
 
 
 
@@ -19,8 +21,10 @@ import DetailsPageHeader from "../pages/DetailsPageHeader"
 
 
 function Header(props){
-      const {data} = props
-          
+      const {data, user} = props
+      
+      console.log(data, "me cago en react");
+
     return(
         <div>
         {
@@ -38,7 +42,11 @@ function Header(props){
         </div>
         
         }
+       
+        <DailyFavoritesButton  data={data} user={user} />
+       
         </div>
+
     )
 }
 

@@ -5,7 +5,7 @@ const userSchema = new Schema(
   {
       username: {type: String, unique: true},
       password: {type: String, required: [true, "Password is required"]},
-      email: {type: String},
+      email: {type: String, match: [ /^\S+@\S+\.\S+$/ , "Please input a valid email"], lowercase: true},
       favorites:{type: [], default: []}
   }
 );

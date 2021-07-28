@@ -4,17 +4,21 @@ import "../App.css";
 import CardsList from "../components/CardsList";
 import AddSuggestion from "../components/AddSuggestion";
 import Footer from "../components/Footer/Footer";
-import Search from "../components/Search"
+
 
 function HomePage(props) {
   const {dailyPic, setSelectedPic, latestPicsList, user} = props
   return (
     <>
-      <Header data={dailyPic}/>
-      <CardsList data={latestPicsList} setSelectedPic={setSelectedPic} user={user}/>
+      <div className='header-pic'>
+        <Header data={dailyPic} user={user}/>
+      </div>
+      <div className ='gallery-container'>
+        <CardsList data={latestPicsList} setSelectedPic={setSelectedPic} user={user}/>
+      </div>
       {user && <AddSuggestion user={user}/>}
       <Footer/>
-      <Search/>
+      
     </>
   );
 }

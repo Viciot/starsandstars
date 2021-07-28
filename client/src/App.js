@@ -38,7 +38,7 @@ function App() {
 
 
 useEffect(()=>{
-    axios.get("https://api.nasa.gov/planetary/apod?api_key=4nNodO7eptWEC8F8NiG9XcA3x5A4AYqADrniZGFu&count=15")
+    axios.get("https://api.nasa.gov/planetary/apod?api_key=4nNodO7eptWEC8F8NiG9XcA3x5A4AYqADrniZGFu&count=50")
     .then(res=>{
         setLatestPicsList(res.data)
     })
@@ -94,9 +94,12 @@ useEffect(()=>{
 					path={'/myconstellation'}
 					component={MyConstellation}
 					user={user}
+					setSelectedPic={setSelectedPic}
+					selectedPic={selectedPic}
+					
 				/>
 			
-				<Route exact path={'/details'} render={(props)=><Card {...props} data={selectedPic} />}/> 
+				<Route exact path={'/details'} render={(props)=><Card {...props} data={selectedPic} user={user} />}/> 
 				<NormalRoute exact path={'/daily-details'} component={DetailsPageHeader} data={dailyPic} />
 				<NormalRoute exact path={'/'}
 				   component={HomePage}

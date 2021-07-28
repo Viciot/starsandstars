@@ -43,6 +43,17 @@ router.post("/signup", isLoggedOut, (req, res) => {
       .json({ errorMessage: "Please provide your username." });
   }
 
+  if (!email) {
+    return res
+      .status(400)
+      .json({errorMessage: "Please provide your email."})
+  }else if(!email.includes('@')){
+    return res
+      .status(400)
+      .json({errorMessage: "Please input a valid email."})
+
+  }
+
   if (password.length < 8) {
     return res.status(400).json({
       errorMessage: "Your password needs to be at least 8 characters long.",

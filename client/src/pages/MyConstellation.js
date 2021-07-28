@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { arrayOfFavorites, deleteFavorite } from '../services/favorites';
+import { Link } from "react-router-dom";
 
 
 
 export default function MyConstellation(props) {
 
+    console.log(props, "linea 9, myconstellation")
+
     const [favoritesArray, setFavoritesArray] = useState([])
     const [deleteFavsArray, setDeleteFavsArray] = useState([])
-    
+    const { setSelectedPic } = props
+
+
+
     let Id = null
     
     if(props.user){
@@ -33,6 +39,7 @@ export default function MyConstellation(props) {
         handleFav()
     }, [])
 
+    
 
     return (
         <div>
@@ -52,6 +59,9 @@ export default function MyConstellation(props) {
                         <div className="detail-line-2">
                             <p className="detail-tagline">{element.date}</p>
                         </div>
+                        <Link to={"/details"} onClick={()=>setSelectedPic(element)}>
+                        <p>See details</p>
+                        </Link>
                         <button onClick={()=>handleDelete(element.date)} >
                         Delete
                         </button>
