@@ -2,7 +2,7 @@ const router = require("express").Router();
 const mongoose = require("mongoose");
 const isLoggedIn = require('../middleware/isLoggedIn')
 const User = require('../models/User.model')
-
+const transporter = require('../config/nodemailer')
 
 router.put('/:Id', (req, res)=>{
 const {Id} = req.params
@@ -45,6 +45,18 @@ router.delete('/:userId/:fecha', (req, res)=>{
   .catch(err=>res.json(err))
 })
 
+router.post('/send-star', (req, res)=>{
+  const { email, message, hdurl, url } = req.body
+  console.log("inside send mail", req.body)
+  transporter.sendMail({
+    from: process.env.user,
+    to: email,
+    subject: "Someone has sent a star to you",
+    html: `<p>Hola, mira esta estrella<p><a href=${url}>Click here</a><p>${message}</p>`
+  })
+  .then(suggestion => console.log("email sent"))
+  .catch(err=> console.log("email not sent"))
+})
 
 
 module.exports = router

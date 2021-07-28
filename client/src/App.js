@@ -24,9 +24,9 @@ import MyConstellation from './pages/MyConstellation';
 
 function App() {
 	const [user, setUser] = useState(null);
-  	const [dailyPic, setDailyPic] = useState(null);
+  	const [dailyPic, setDailyPic] = useState({});
 	const [latestPicsList, setLatestPicsList] = useState([]);
-	const [selectedPic, setSelectedPic] = useState(null);
+	const [selectedPic, setSelectedPic] = useState({});
    
 	//ponemos la foto del dia
   useEffect(()=>{
