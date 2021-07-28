@@ -32,4 +32,11 @@ export function arrayOfFavorites(Id){
      .then(successStatus)
      .catch(internalServerError);
  }
+
+export function deleteFavorite(userId, fecha){
+  return favoritesService
+    .delete(`/${userId}/${fecha}`)
+    .then(successStatus)
+    .catch(internalServerError);
+}
  

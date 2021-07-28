@@ -33,4 +33,18 @@ router.get('/:Id', (req, res)=>{
   .catch(err=>res.json(err))
 })
 
+router.delete('/:userId/:fecha', (req, res)=>{
+  const { userId, fecha } = req.params
+  console.log(userId, fecha, "linea 39 fav")
+
+
+  User.findByIdAndUpdate(userId, { $pull: {favorites: { date: fecha } }}, {new: true})
+  .then((userWithThatId)=>{
+    res.json(userWithThatId.favorites)
+  })
+  .catch(err=>res.json(err))
+})
+
+
+
 module.exports = router

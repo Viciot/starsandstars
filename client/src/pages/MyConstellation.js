@@ -1,39 +1,39 @@
 import React, { useEffect, useState } from 'react'
-import { arrayOfFavorites } from '../services/favorites';
+import { arrayOfFavorites, deleteFavorite } from '../services/favorites';
 
 
 
 export default function MyConstellation(props) {
 
     const [favoritesArray, setFavoritesArray] = useState([])
-
-
-    let Id 
-    if(props.user){
-    Id = props.user._id
-    }
-   
+    const [deleteFavsArray, setDeleteFavsArray] = useState([])
     
+    let Id = null
+    
+    if(props.user){
+        Id = props.user._id
+    }
+        
     function handleFav(){
-        console.log(props)
 
         arrayOfFavorites(Id)
         .then((res)=>{
         const array = res.data
-        setFavoritesArray(array)     
-
-            
+        setFavoritesArray(array)               
         })  
+    }
+
+
+    function handleDelete(fecha){
+        deleteFavorite(Id, fecha)
+        .then(res=>handleFav())
     }
 
     useEffect(()=>{
         handleFav()
+    }, [])
 
-        
-        
-    }, [Id])
 
-      
     return (
         <div>
             {favoritesArray.map((element)=>{
@@ -52,6 +52,9 @@ export default function MyConstellation(props) {
                         <div className="detail-line-2">
                             <p className="detail-tagline">{element.date}</p>
                         </div>
+                        <button onClick={()=>handleDelete(element.date)} >
+                        Delete
+                        </button>
                     </div>
                 )
                 
