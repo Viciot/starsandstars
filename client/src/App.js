@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import NormalRoute from './routing-components/NormalRoute';
 import ProtectedRoute from './routing-components/ProtectedRoute';
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
+
 
 //Helpers
 import * as CONSTS from './utils/consts';
@@ -85,7 +88,7 @@ useEffect(()=>{
 	return (
 		<div className='App'>
 			<Navbar handleLogout={handleLogout} user={user} />
-​       
+			<ToastContainer />	​       
 			<Switch>
 	
 				{/* <NormalRoute exact path={'/latest-pics/'} render={(props)=><CardsList {...props} setSelectedPic={setSelectedPic} />}/> */}

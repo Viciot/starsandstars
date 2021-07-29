@@ -82,7 +82,7 @@ function Signup(props) {
 					minLength='8'
 				/>
 
-				<button className='button__submit' type='submit'>
+				<button className='form-btn' type='submit'>
 					Submit
 				</button>
 			</form>

@@ -10,7 +10,7 @@ function HomePage(props) {
   const {dailyPic, setSelectedPic, latestPicsList, user} = props
   return (
     <>
-      <div className='header-pic'>
+      <div className='header-div'>
         <Header data={dailyPic} user={user}/>
       </div>
       <div className ='gallery-container'>

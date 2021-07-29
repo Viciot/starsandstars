@@ -15,7 +15,7 @@ export default function SuggestionForm() {
   }
 
   return (
-    <form className="contact-form" onSubmit={sendEmail}>
+    <form className="form-stars" onSubmit={sendEmail}>
       <input type="hidden" name="contact_number" />
       <label>Name</label>
       <input type="text" name="user_name" />
@@ -23,7 +23,7 @@ export default function SuggestionForm() {
       <input type="email" name="user_email" />
       <label>Any Suggestion?</label>
       <textarea name="message" />
-      <input type="submit" value="Send" />
+      <input className='form-btn' type="submit" value="Send" />
     </form>
   );
 }

@@ -1,34 +1,61 @@
 .App {
+  margin: 0;
+  padding: 0;
   text-align: center;
-  display: flex;
+  background-color: #3c2774;
+  /* display: flex;
   flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: flex-start;
 	align-items: stretch;
-	align-content: stretch;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	align-content: stretch; */
 }
 
 .App-link {
-  color: #61dafb;
+  color: #f8fb61;
 }
+/* 
+.header-div{
+  width: 100%;
+} */
 
 .header-pic{
-  width: 400px;
+  width: 90%;
+  height: 900px;
+  margin: 0;
+  padding: 0;
 }
 
 .gallery-container{
-  display:grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-auto-rows: 150px;
+  width: 100%;
+  display:flex;
+  /* grid-template-columns: repeat(3,2fr);
+  grid-auto-rows: 100px;
+  
+  grid-gap: 10px;*/
+  padding: 60px;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.gallery-img{
+  width:600px;
+  height:500px;
+  margin-left: 0;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  /* object-fit: cover;*/
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+
+.form-btn{
+  color: red;
 }

@@ -1,7 +1,4 @@
 import React , { useState } from "react";
-import { Link } from "react-router-dom"
-import App from "../App"
-import {nodeMailService} from "../services/nodemailer"
 import Axios from 'axios'
 import Search from "../components/Search"
 
@@ -52,12 +49,12 @@ export default function Card(props) {
             
             { user &&  
             <div>
-            <form onSubmit={handleSendEmail} >
+            <form className="form-stars" onSubmit={handleSendEmail} >
                 <label htmlFor="email">Email</label>
                 <input value= {formState.email} type="email" name="email" id="email" onChange={handleOnChange}/>
                 <label htmlFor="message">Message</label>
                 <textarea value= {formState.message} type="text" name="message" id="message" onChange={handleOnChange}></textarea>                
-                <button type="submit">Send a Star</button>
+                <button className='form-btn' type="submit">Send a Star</button>
             </form>
             </div>    
             }

@@ -36,13 +36,13 @@ function AddSuggestion(props){
 
     return (
         <div>
-        <form onSubmit={handleFormSubmit}>
+        <form className="form-stars"  onSubmit={handleFormSubmit}>
           <label>Name:</label>
           <input type="text" name="name" value={formState.name} onChange={ e => handleChange(e)}/>
           <label>Make a suggestion:</label>
           <textarea name="comment" value={formState.comment} onChange={ e => handleChange(e)} />
           
-          <input type="submit" value="Submit" />
+          <input className='form-btn' type="submit" value="Submit" />
         </form>
       </div>
     )

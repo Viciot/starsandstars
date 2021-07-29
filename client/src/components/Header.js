@@ -29,8 +29,8 @@ function Header(props){
         <div>
         {
         data &&            
-        <div className= "homepage">
-        <img src= {`${data.hdurl}`} alt='pic of the day'/>
+        <div className= "header">
+        <img className= "header-pic" src= {`${data.hdurl}`} alt='pic of the day'/>
         {/* <DetailsPageHeader
             data={data}
         /> */}

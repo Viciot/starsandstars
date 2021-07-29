@@ -10,19 +10,22 @@ function CardsList(props){
     const { data, setSelectedPic, user } = props
   
     return(
-        <div className= "homepage list">
+        <div className= "gallery-container">
             
             {data.map((onePic)=>{
                 return(
-                    <>
+                    <div className='gallery-div'>
                     <Zoom>
-                       <img src={onePic.url} alt={"card-detail-img"}/>
+                       <img className='gallery-img' src={onePic.url} alt={"card-detail-img"}/>
                      </Zoom>
                      <Link to={"/details"} onClick={()=>setSelectedPic(onePic)}>
                        <p>See details</p>
                      </Link>
+                     {user &&
+
                      <FavoritesButton  selectedPic={onePic} user={user} />
-                     </>
+                     }
+                     </div>
                     )
             })
             }
