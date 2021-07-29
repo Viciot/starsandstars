@@ -34,7 +34,7 @@ function Signup(props) {
 			// successful signup
 			console.log(res);
 			if (!res.data) { 
-				console.log('error');
+				console.log(res.message);
 			} else{
     	localStorage.setItem(CONSTS.ACCESS_TOKEN, res.data.accessToken);
 			props.authenticate(res.data.user);
@@ -62,7 +62,7 @@ function Signup(props) {
 				<label htmlFor='input-username'>Email</label>
 				<input
 					id='input-email'
-					type='text'
+					type='email'
 					name='email'
 					placeholder='Your Email'
 					value={formData.email}

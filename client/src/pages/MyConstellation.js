@@ -52,17 +52,10 @@ export default function MyConstellation(props) {
                             <p className="detail-title">{element.title}</p>
                         </div>
 
-                        <div className="detail-line-1">
-                            <p className="detail-explanation">{element.explanation} </p>
-                        </div>
-
-                        <div className="detail-line-2">
-                            <p className="detail-tagline">{element.date}</p>
-                        </div>
                         <Link to={"/details"} onClick={()=>setSelectedPic(element)}>
-                        <p>See details</p>
+                        <p>See details and Send a Star</p>
                         </Link>
-                        <button onClick={()=>handleDelete(element.date)} >
+                        <button className= "form-btn" onClick={()=>handleDelete(element.date)} >
                         Delete
                         </button>
                     </div>

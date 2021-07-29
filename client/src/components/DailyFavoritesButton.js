@@ -27,7 +27,7 @@ function handleSave(){
 
 return(
 <div> 
-  <button onClick={handleSave}>
+  <button className="form-btn" onClick={handleSave}>
   Add to My Constellation
   </button>
 </div>

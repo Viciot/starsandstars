@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import * as PATHS from "../../utils/paths";
 import * as CONSTS from "../../utils/consts";
 // import SuggestionForm from "../SuggestionForm";
-import{ init } from 'emailjs-com';
-init("user_hj8Hoq7YyGBLaIMwhkoP4");
+
 
 
 const Footer = (props) => {

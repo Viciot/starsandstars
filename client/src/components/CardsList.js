@@ -9,16 +9,20 @@ import FavoritesButton from "./FavoritesButton";
 function CardsList(props){
     const { data, setSelectedPic, user } = props
   
+    const arrayWithoutVideos = data.filter(item=>!item.url.includes('youtube')  && !item.url.includes('vimeo') && !item.url.includes('ustream'))
+
     return(
         <div className= "gallery-container">
             
-            {data.map((onePic)=>{
+            {arrayWithoutVideos.map((onePic)=>{
+        
+
                 return(
                     <div className='gallery-div'>
                     <Zoom>
                        <img className='gallery-img' src={onePic.url} alt={"card-detail-img"}/>
                      </Zoom>
-                     <Link to={"/details"} onClick={()=>setSelectedPic(onePic)}>
+                     <Link className='details-link' to={"/details"} onClick={()=>setSelectedPic(onePic)}>
                        <p>See details</p>
                      </Link>
                      {user &&
@@ -27,6 +31,7 @@ function CardsList(props){
                      }
                      </div>
                     )
+                    
             })
             }
             

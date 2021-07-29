@@ -1,19 +1,25 @@
+
 nav {
   display: flex;
   padding: 1em;
   justify-content: space-around;
   flex-wrap: wrap;
-  background: #282c34;
+  background: #2e0257;
   font-weight: 600;
+  height:96px;
 }
 
 .nav__projectName {
-  color: #e4f9ff;
+  color: white;
+  letter-spacing: 5px;
+  font-size: 25px;
   text-decoration: none;
 }
 
 .authLink {
-  color: #61dafb;
+  color:8855ff;
+  letter-spacing: 5px;
+  font-size: 25px;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
 }
@@ -29,9 +35,10 @@ nav {
 .nav-logoutbtn {
   font-family: inherit;
   font-weight: inherit;
+  letter-spacing: 5px;
   padding: 0.5em 1em;
   margin-left: 1em;
-  background-color: #5595ff;
+  background-color: #8855ff;
   box-shadow: 0 0 5px 0 aliceblue;
   border: none;
   border-radius: 2px;
@@ -44,5 +51,11 @@ nav {
 
 .nav-logoutbtn:hover {
   transform: scale(1.05);
-  background-color: #d13e3e;
+  background-color: #f758e1;
+}
+
+.logo{
+  height:80px;
+  margin-left: 50px;
+  margin-bottom: 0;
 }

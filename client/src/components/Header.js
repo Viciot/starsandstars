@@ -22,22 +22,23 @@ import DailyFavoritesButton from "../components/DailyFavoritesButton"
 
 function Header(props){
       const {data, user} = props
-      
-      console.log(data, "me cago en react");
 
     return(
         <div>
         {
         data &&            
         <div className= "header">
+        
+        <div className='img-container'>
         <img className= "header-pic" src= {`${data.hdurl}`} alt='pic of the day'/>
+        </div>
         {/* <DetailsPageHeader
             data={data}
         /> */}
-
-        <button >
-        <Link to={"/daily-details"} > Details </Link>
-        </button>
+        <br/>
+        
+        <Link className="details-link" to={"/daily-details"} > See Details </Link>
+       
 
         </div>
         

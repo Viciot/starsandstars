@@ -21,9 +21,8 @@ export default function SuggestionForm() {
       <input type="text" name="user_name" />
       <label>Email</label>
       <input type="email" name="user_email" />
-      <label>Any Suggestion?</label>
-      <textarea name="message" />
-      <input className='form-btn' type="submit" value="Send" />
+      <textarea name="message" placeholder="your suggestion here" />
+      <button className='form-btn' type="submit" value="Send" >Send a Suggestion</button>
     </form>
   );
 }

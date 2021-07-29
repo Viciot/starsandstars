@@ -58,15 +58,15 @@ const Search = () => {
 
   return (
     <div>
-      <div className="ui form">
-        <div className="field">
+      <div className="box">
+        <div className="container-1">
           <label>Search Term</label>
           <input
             className="input"
             value={term}
             onChange={e => setTerm(e.target.value)}
           />
-          <button onClick={handleClearSearch}>Clear</button>
+          <button className="form-btn" onClick={handleClearSearch}>Clear</button>
         </div>
       </div>
       <div className="ui celled list">{searchResultsMapped}</div>

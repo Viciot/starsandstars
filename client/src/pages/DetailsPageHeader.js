@@ -14,7 +14,10 @@ export default function DetailsPageHeader(props){
         {
         data && 
         <div className="img-detail">
-            <img src={data.hdurl} alt="today-img"/>
+
+            <div className='img-container'>
+            <img className= "header-pic" src={data.hdurl} alt="today-img"/>
+            </div>
 
             <div className="detail-title">
                 <p className="detail-title">{data.title}</p>
