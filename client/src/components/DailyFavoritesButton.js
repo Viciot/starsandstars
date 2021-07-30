@@ -1,4 +1,5 @@
 import React from 'react'
+import { toast } from 'react-toastify';
 import App from '../App';
 import { constellation } from '../services/favorites'
 
@@ -19,6 +20,7 @@ function handleSave(){
   
     constellation(Id, data)
     .then((res)=>{
+      toast("You added it!")
       console.log(res)
     })
 

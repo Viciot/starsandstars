@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { login } from '../services/auth';
 import './Signup';
 import * as CONSTS from '../utils/consts';
+import { toast } from 'react-toastify';
 
 function LogIn(props) {
 	const { authenticate } = props;
@@ -32,6 +33,7 @@ function LogIn(props) {
 		login(credentials).then((res) => {
 			if (!res.data) {
 				console.log('error');
+				toast("Your credentials are invalid")				
 			}else{
       localStorage.setItem(CONSTS.ACCESS_TOKEN, res.data.accessToken);
 			authenticate(res.data.user);

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { arrayOfFavorites, deleteFavorite } from '../services/favorites';
 import { Link } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 
 
@@ -33,6 +34,7 @@ export default function MyConstellation(props) {
     function handleDelete(fecha){
         deleteFavorite(Id, fecha)
         .then(res=>handleFav())
+        toast("You have deleted the picture")
     }
 
     useEffect(()=>{

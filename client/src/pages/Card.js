@@ -1,6 +1,7 @@
 import React , { useState } from "react";
 import Axios from 'axios'
 import Search from "../components/Search"
+import { toast } from "react-toastify";
 
 
 export default function Card(props) {
@@ -27,8 +28,11 @@ export default function Card(props) {
         Axios.post('http://localhost:5005/api/favorites/send-star', { ...formState, hdurl, url } )  //concatenamos el contenido del form con la hdurl y asi creamos un objeto y lo mandamos
         .then(res=> setFormState(initialFormState))
         .catch(err=>console.log(err))
+        toast("You have sent a star!")
+        
     }
         
+    
     
     return(
        <>
